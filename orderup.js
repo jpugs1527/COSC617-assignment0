@@ -1,4 +1,4 @@
-function verifyPassword (password, verifyPassword) {
+function verifyPassword(password, verifyPassword) {
     if (password === verifyPassword) {
         return true;
     } else {
@@ -6,3 +6,4 @@ function verifyPassword (password, verifyPassword) {
         return false;
     }
 }
+
