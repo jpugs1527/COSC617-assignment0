@@ -10,3 +10,20 @@ function verifyPassword() {
     }
 }
 
+function populateDelivery() {
+    var checkBox = document.getElementById("populate");
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var address = document.getElementById("address").value;
+    var city = document.getElementById("city").value;
+    var state = document.getElementById("state").value;
+
+    if(checkBox.checked) {
+        // populate the fieldset
+        document.getElementById("delAddFirstName").value = firstName;
+        document.getElementById("delAddLastName").value = lastName;
+        document.getElementById("delAddAddress").value = address;
+        document.getElementById("delAddCity").value = city;
+        document.getElementById("delAddState").value = state;
+    }
+}
