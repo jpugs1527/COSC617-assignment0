@@ -1,4 +1,7 @@
-function verifyPassword(password, verifyPassword) {
+function verifyPassword() {
+    var password = document.getElementById("password").value;
+    var verifyPassword = document.getElementById("confirmPassword").value;
+    console.log(password,verifyPassword);
     if (password === verifyPassword) {
         return true;
     } else {
