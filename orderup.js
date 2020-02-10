@@ -27,3 +27,13 @@ function populateDelivery() {
         document.getElementById("delAddState").value = state;
     }
 }
+
+function getResults() {
+    var form = $('#orderForm').serializeArray();
+    var html = "";
+    form.forEach(element => {
+        html += "<p>" + element.name + " - " + element.value + "</p><br/>";
+    });
+    console.log(html);
+    document.write(html);
+}
