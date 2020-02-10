@@ -1,7 +1,6 @@
 function verifyPassword() {
     var password = document.getElementById("password").value;
     var verifyPassword = document.getElementById("confirmPassword").value;
-    console.log(password,verifyPassword);
     if (password === verifyPassword) {
         return true;
     } else {
@@ -29,11 +28,21 @@ function populateDelivery() {
 }
 
 function getResults() {
-    var form = $('#orderForm').serializeArray();
-    var html = "";
-    form.forEach(element => {
-        html += "<p>" + element.name + " - " + element.value + "</p><br/>";
+    // Grab query string from uri
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+
+    // Break up the individual query parameters
+    var params = queryString.split("&");
+    document.open();
+    document.write("<div class='container center'>");
+    document.write("<h3>Data Entered</h3><br/>")
+    params.forEach(element => {
+        document.write(element + "<br/>");
     });
-    console.log(html);
-    document.write(html);
+    document.write("</div>");
+    document.close();
+
+    // Apply css via jquery append
+    $('head').append('<link rel="stylesheet" type="text/css" href="orderup.css">');
 }
